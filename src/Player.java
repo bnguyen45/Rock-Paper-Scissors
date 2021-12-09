@@ -1,4 +1,4 @@
-public class Player extends GameStart {
+public class Player {
    private String name;
     private String choice;
 
