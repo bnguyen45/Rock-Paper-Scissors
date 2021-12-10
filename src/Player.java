@@ -1,33 +1,34 @@
 public class Player {
-   private String name;
-   private String choice;
-   private int score=0;
+    private String name;
+    private String choice;
+    int score = 0;
 
 
-    public void setName(String name){
-       this.name=name;
-    }
-    public String getName(){
-       return name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getChoice(){
-       return choice;
+    public String getName() {
+        return name;
     }
 
-    public void setChoice(String choice){
-       this.choice=choice;
+    public String getChoice() {
+        return choice;
     }
 
-    public void setScore(int score){
+    public void setChoice(String choice) {
+        this.choice = choice;
+    }
+
+    public void setScore(int score) {
         this.score = score;
     }
 
-    public int getScore(){
+    public int getScore() {
         return score;
     }
 
-    public void incrementScore(){
+    public void incrementScore() {
         this.score++;
     }
 
