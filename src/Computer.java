@@ -7,24 +7,24 @@ private int score=0;
 
 
 public String getChoice(){
-    return choice;
+    return setChoice();
 }
+public String setChoice(){
+    String[] arr={"Rock","Paper","Scissors"};
 
-public void setChoice(){
-   int[] choiceArray ={1, 2, 3};
-    int randomChoice = new Random().nextInt(choiceArray.length);
-    if (randomChoice == choiceArray[0]){
-        choice = "Rock";
-    }else if(randomChoice == choiceArray[1]){
-        choice = "Paper";
-    }else{
-        choice = "Scissors";
-    }
-
-
-
-
+    int rnd = new Random().nextInt(arr.length);
+    return arr[rnd];
 }
 
 
+
+
+
+
+
+
+
 }
+
+
+
