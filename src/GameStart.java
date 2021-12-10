@@ -72,6 +72,8 @@ public class GameStart {
 
             player1.setChoice(choice);
 
+
+            computer.setChoice();
             System.out.println(computer.getName() + " chose " + computer.getChoice());
 
 
