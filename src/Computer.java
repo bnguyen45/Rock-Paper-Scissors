@@ -1,2 +1,3 @@
-public class Computer {
+public class Computer extends Player {
+
 }
