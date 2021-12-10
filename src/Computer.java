@@ -3,7 +3,7 @@ import java.util.Random;
 public class Computer extends Player {
 
     private String choice;
-    int score = 0;
+    private int score;
 
 
     public String getChoice() {

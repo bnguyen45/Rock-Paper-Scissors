@@ -1,7 +1,7 @@
 public class Player {
     private String name;
     private String choice;
-    int score = 0;
+    private int score;
 
 
     public void setName(String name) {
