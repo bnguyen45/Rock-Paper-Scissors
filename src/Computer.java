@@ -7,13 +7,14 @@ private int score=0;
 
 
 public String getChoice(){
-    return setChoice();
+    return choice;
 }
-public String setChoice(){
+public void setChoice(){
     String[] arr={"Rock","Paper","Scissors"};
 
     int rnd = new Random().nextInt(arr.length);
-    return arr[rnd];
+    choice = arr[rnd];
+
 }
 
 
