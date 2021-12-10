@@ -4,21 +4,31 @@ public class GameStart {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        String choice = "";
-        String vsChoice = "";
-        String quitOption = "";
+        String choice;
+        String vsChoice;
+        String quitOption;
         boolean gameRunning = true;
+
+        Player player1 = new Player();
+        Player player2 = new Player();
+        Computer computer = new Computer();
 
 
         System.out.println("Welcome to Rock, Paper, Scissors!");
 
+
         while (gameRunning) {
             System.out.println("Would you like to play vs another player or computer?");
+
             vsChoice = scanner.next();
 
-            Player player1 = new Player();
+            while (!"player".equalsIgnoreCase(vsChoice) && !"computer".equalsIgnoreCase(vsChoice)) {
+                System.out.println("Please enter a valid choice: player or computer");
+                vsChoice = scanner.next();
+            }
+
+
             if (vsChoice.equalsIgnoreCase("player")) {
-                Player player2 = new Player();
 
                 player1.setName("Player1");
                 player2.setName("Player2");
@@ -27,7 +37,7 @@ public class GameStart {
                 choice = scanner.next();
 
                 while (!"Rock".equalsIgnoreCase(choice) && !"Paper".equalsIgnoreCase(choice) && !"Scissors".equalsIgnoreCase(choice)) {
-                    System.out.println("Please enter a valid choice");
+                    System.out.println("Please enter a valid choice: `Rock`, `Paper`, or `Scissors`");
                     choice = scanner.next();
                 }
 
@@ -37,7 +47,7 @@ public class GameStart {
                 choice = scanner.next();
 
                 while (!"Rock".equalsIgnoreCase(choice) && !"Paper".equalsIgnoreCase(choice) && !"Scissors".equalsIgnoreCase(choice)) {
-                    System.out.println("Please enter a valid choice");
+                    System.out.println("Please enter a valid choice: `Rock`, `Paper`, or `Scissors`");
                     choice = scanner.next();
                 }
                 player2.setChoice(choice);
@@ -58,7 +68,6 @@ public class GameStart {
                 }
             } else {
 
-                Computer computer = new Computer();
 
                 player1.setName("Player1");
                 computer.setName("Computer");
@@ -67,7 +76,7 @@ public class GameStart {
                 choice = scanner.next();
 
                 while (!"Rock".equalsIgnoreCase(choice) && !"Paper".equalsIgnoreCase(choice) && !"Scissors".equalsIgnoreCase(choice)) {
-                    System.out.println("Please enter a valid choice");
+                    System.out.println("Please enter a valid choice: `Rock`, `Paper`, or `Scissors`");
                     choice = scanner.next();
                 }
 
@@ -93,10 +102,14 @@ public class GameStart {
 
             System.out.println("Enter Quit to exit game");
             System.out.println("Or enter any key to continue");
+
+
             quitOption = scanner.next();
+
             if (quitOption.equalsIgnoreCase("Quit")) {
                 gameRunning = false;
             }
+
 
         }
     }

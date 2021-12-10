@@ -3,7 +3,6 @@ public class Player {
     private String choice;
     private int score;
 
-
     public void setName(String name) {
         this.name = name;
     }
@@ -31,5 +30,6 @@ public class Player {
     public void incrementScore() {
         this.score++;
     }
+
 
 }
