@@ -38,24 +38,22 @@ public class GameStart {
             }
             player2.setChoice(choice);
 
-            if (player1.getChoice().equalsIgnoreCase(player2.getChoice())) {
-                System.out.println("Game is a draw!");
-            } else {
-                Player winner = new GameLogic().start(player1, player2);
-                System.out.println(winner.getName() + " wins the game!");
+            System.out.println(player1.getName() + " chose " + player1.getChoice());
+            System.out.println(player2.getName() + " chose " + player2.getChoice());
 
-                if (winner == player1) {
-                    player1.incrementScore();
+            Player winner = new GameLogic().start(player1, player2);
 
-                    System.out.println("Player 1 Score: " + player1.getScore());
+            if (winner == player1) {
+                player1.incrementScore();
 
-                } else {
-                    player2.incrementScore();
-                    System.out.println("Player 2 Score: " + player2.getScore());
-                }
+                System.out.println("Player 1 Score: " + player1.getScore());
+
+            } else if (winner == player2) {
+                player2.incrementScore();
+                System.out.println("Player 2 Score: " + player2.getScore());
             }
-
         } else {
+
             Player player1 = new Player();
             Computer computer = new Computer();
 
@@ -71,32 +69,27 @@ public class GameStart {
             }
 
             player1.setChoice(choice);
-
-
             computer.setChoice();
+
+            System.out.println(player1.getName() + " chose " + player1.getChoice());
             System.out.println(computer.getName() + " chose " + computer.getChoice());
 
+            Player winner = new GameLogic().start(player1, computer);
 
-            if (player1.getChoice().equalsIgnoreCase(computer.getChoice())) {
-                System.out.println("Game is a draw!");
-            } else {
-                Player winner = new GameLogic().start(player1, computer);
-                System.out.println(winner.getName() + " wins the game!");
+            if (winner == player1) {
+                player1.incrementScore();
 
-                if (winner == player1) {
-                    player1.incrementScore();
+                System.out.println("Player 1 Score: " + player1.getScore());
 
-                    System.out.println("Player 1 Score: " + player1.getScore());
-
-                } else {
-                    computer.incrementScore();
-                    System.out.println("Computer Score: " + computer.getScore());
-                }
-
-
+            } else if (winner == computer) {
+                computer.incrementScore();
+                System.out.println("Computer Score: " + computer.getScore());
             }
 
 
         }
+
+
     }
 }
+
